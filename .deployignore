@@ -1,0 +1,11 @@
+# these files will be ignored when deploy at gh-pages
+assets/*.coffee
+assets/*.scss
+
+.deployignore
+.gitignore
+.travis.yml
+bower.json
+gulpfile.coffee
+package.json
+README.md

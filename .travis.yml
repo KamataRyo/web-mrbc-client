@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+branches:
+  only:
+  - master
+  - "/^v?[0-9](\\.[0-9])*/"
+before_script:
+- npm run build
+script:
+- npm test
+after_success:
+- curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash
+env:
+  global:
+  - NODE_VERSION_TO_DEPLOY: 0.11
+  - GH_REF: github.com/KamataRyo/web-mrbc-client
+  - secure: cE2BJ//GUn/iz3yQ6Wa2RzNVipDMr53oS+cYfjHXI5LQ/Sj72dMB/JcUomWrGVIxn556QXS2FvgtLn/vLcd1V2UAJvCnV0Um/EDkT33pdWO1v9BCT4MyTvibVoG2h3SzHNEn4frq4oUG90d0j0GTG8j+4h0+ugM/UdAGY+DQvriJ3BJsfRzex1CJIpYLPmFCQ+l2ei0uQvb6vqcO0LMsDocUpaSTGt9R/hhmFZSRdWR6ytYsogGpgzsB1/LBYH4dw5Sk+tdz4cUFdIFsau21/CjGI4OL6iQ5+/iAUfofCGBijUZJI3HhfmPIUAdDpy/X/d7Fq3pWPiyQJwZorwx2XSxWmkDdBmQz6gXbw0KIB2/9jMryjVpLg5VrMXaW7oPCjaC7A1xncNQ3tkqZnVCtAMHrri/r5XRq6g0C1W6yNEiiSn7dmnR/dizrBOkiWwEFpo4y8f3ceMDC4zxrhasGuaXK9e2GFwlywwFapITaPv/kKI+jU3l/Aqxf91YQW0ckEB45+kPA9Bk9zyLu+Zb8S0aomWv/rrHrhVzkkueZMS8bqm1vsm9s+UlUoKE/QnjWFGiM18Bh8ciFgc6C5fRIJ1KHNIuifKZzyQZgjp+bvthsOceaJ1ElDu+MadkPg7jRsmMgMRFu+vIhZR2+1W0T0R58U4I5VztP4RYADGwD1Ls=
