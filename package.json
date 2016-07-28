@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build": "bower install; ./node_modules/.bin/gulp build",
+    "build": "./node_modules/.bin/bower install; ./node_modules/.bin/gulp build",
+    "lint": "./node_modules/.bin/coffeelint assets/ spec/; ./node_modules/.bin/sass-lint -c './.sass-lint.yml' 'assets/*.scss' -v -q",
     "test": "npm run build; karma start ./karma.conf.coffee --single-run --browsers PhantomJS"
   },
   "author": "",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "bower": "^1.7.9",
     "coffee-script": "^1.10.0",
+    "coffeelint": "^1.15.7",
     "gulp": "^3.9.1",
     "gulp-coffee": "^2.3.2",
     "gulp-plumber": "^1.1.0",
@@ -22,6 +24,7 @@
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.1",
-    "phantomjs": "^2.1.7"
+    "phantomjs": "^2.1.7",
+    "sass-lint": "^1.8.2"
   }
 }

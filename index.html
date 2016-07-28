@@ -48,14 +48,15 @@
               <li class="tab-content" ng-class="fileUploadActive" id="fileUploadPanel">
                 <label for="_file">Upload a File</label>
                 <label for="file" id="_file" class="button">select
-                  <input file-reader type="file" class="file-upload" id="file">
+                  <input file-reader type="file" class="file-upload input-file" id="file">
                 </label>
-                <span class="filename_label">{{fileName}}</span>
+                <span class="filename-label">{{fileName}}</span>
+                <span class="filename-label">{{compiledFileName}}</span>
               </li>
 
               <li class="tab-content" ng-class="directInputActive" id="directInputPanel">
                 <label for="source">Input Source</label>
-                <textarea ng-model="source" class="u-full-width" placeholder="print 'Hello World!'" id="source"></textarea>
+                <textarea ng-model="source" class="u-full-width source-area" placeholder="print 'Hello World!'" id="source"></textarea>
               </li>
 
               <li class="tab-content" ng-class="fromURLActive" id="fromURLPanel">
@@ -86,9 +87,9 @@
       <p class="footer-text">
         <small>Web-mrbc is hosted by wakayama.rb.<br>We ♥ feedback.</small>
       </p>
-      <ul class="SNS-links">
-        <li class="SNS-link"><a href="https://www.facebook.com/groups/wakayama.rb/"><i class="fa fa-2x fa-facebook-square"></i></a></li>
-        <li class="SNS-link"><a href="https://github.com/wakayamarb"><i class="fa fa-2x fa-github"></i></a></li>
+      <ul class="sns-links">
+        <li class="sns-link"><a href="https://www.facebook.com/groups/wakayama.rb/"><i class="fa fa-2x fa-facebook-square"></i></a></li>
+        <li class="sns-link"><a href="https://github.com/wakayamarb"><i class="fa fa-2x fa-github"></i></a></li>
         <!-- <li><a href="http://wakayamarb.org">Website</a></li> -->
       </ul>
     </footer>

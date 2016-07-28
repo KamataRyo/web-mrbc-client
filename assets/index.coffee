@@ -9,11 +9,19 @@ app.config [
         $locationProvider.html5Mode(true).hashPrefix '!'
 ]
 
-
 app.directive 'fileReader', ->
     return {
         restrict: 'A'
         link: (scope, element, attrs) ->
+
+            getCompiledFileName = (filename) ->
+                elements = filename.split '.'
+                if elements[elements.length - 1] is 'rb'
+                    elements[elements.length - 1] = 'mrb'
+                    return elements.join '.'
+                else
+                    return filename + '.mrb'
+
             element.on 'change', (event) ->
                 limit = 100000 #100kb
                 scope.log = undefined
@@ -29,6 +37,7 @@ app.directive 'fileReader', ->
                     return
 
                 scope.fileName = file.name
+                scope.compiledFileName = getCompiledFileName file.name
                 scope.$apply()
 
                 fileReader = new FileReader()

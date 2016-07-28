@@ -13,6 +13,7 @@ branches:
 before_script:
 - npm run build
 script:
+- npm run lint
 - npm test
 after_success:
 - curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash

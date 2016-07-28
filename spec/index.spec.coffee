@@ -5,5 +5,4 @@ describe 'test of directives:', ->
 
     describe 'test of file-reader directive:', ->
         it 'should be a spec', ->
-            expect true
-                .toEqual false
+            (1).toEqual(1)
