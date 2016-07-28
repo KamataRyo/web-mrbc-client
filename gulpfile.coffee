@@ -3,11 +3,15 @@ coffee  = require 'gulp-coffee'
 sass    = require 'gulp-sass'
 plumber = require 'gulp-plumber'
 
-gulp.task 'coffee', ->
-    gulp.src 'assets/*.coffee'
-        .pipe plumber()
-        .pipe coffee()
-        .pipe gulp.dest 'assets/'
+coffeePipeline = (base) ->
+    ->
+        gulp.src ["#{base}/**/*.coffee"]
+            .pipe plumber()
+            .pipe coffee()
+            .pipe gulp.dest "./#{base}"
+
+gulp.task 'coffee-assets', coffeePipeline('assets')
+gulp.task 'coffee-spec', coffeePipeline('spec')
 
 gulp.task 'sass', ->
     gulp.src 'assets/*.scss'
@@ -15,7 +19,7 @@ gulp.task 'sass', ->
     .pipe sass()
     .pipe gulp.dest 'assets/'
 
-gulp.task 'build', ['coffee', 'sass']
+gulp.task 'build', ['coffee-assets', 'coffee-spec', 'sass']
 
 gulp.task 'watch', ['build'], ->
-    gulp.watch ['assets/*'], ['build']
+    gulp.watch ['assets/*', 'spec/*'], ['build']

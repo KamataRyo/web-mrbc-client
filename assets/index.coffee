@@ -1,5 +1,7 @@
+'use strict'
+
 endpoint = 'http://web-mrbc.wakayamarb.org'
-app = angular.module 'app', []
+app = angular.module 'web-mrbc-client', []
 
 app.config [
     '$locationProvider'

@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 bower_components
-assets/index.js
-style.css
+assets/*.js
+assets/*.css
+spec/*.js
 
 npm-debug.log

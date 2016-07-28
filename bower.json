@@ -1,17 +1,13 @@
 {
-  "name": "www",
+  "name": "web-mrbc-client",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "authors": [
     "KamataRyo <mugil.cephalus+Pagophilla.local@gmail.com>"
   ],
-  "license": "ISC",
-  "homepage": "https://github.com/KamataRyo/web-mrbc",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "license": "GPL",
+  "homepage": "https://github.com/KamataRyo/web-mrbc-client",
+  "dependencies": {
+    "skeleton": "^2.0.4"
+  }
 }
