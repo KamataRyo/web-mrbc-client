@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "bower install; ./node_modules/.bin/gulp build",
-    "test": "npm run build; karma start ./karma.conf.js --single-run --browsers PhantomJS"
+    "test": "npm run build; karma start ./karma.conf.coffee --single-run --browsers PhantomJS"
   },
   "author": "",
   "license": "ISC",

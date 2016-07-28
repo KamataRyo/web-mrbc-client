@@ -1,7 +1,9 @@
 'use strict'
 
-describe 'test of directives', ->
+describe 'test of directives:', ->
     app = angular.module 'web-mrbc-client'
-    it 'should be a spec', ->
-        expect true
-            .toEqual false
+
+    describe 'test of file-reader directive:', ->
+        it 'should be a spec', ->
+            expect true
+                .toEqual false
