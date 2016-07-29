@@ -8,6 +8,7 @@
   "license": "GPL",
   "homepage": "https://github.com/KamataRyo/web-mrbc-client",
   "dependencies": {
-    "skeleton": "^2.0.4"
+    "skeleton": "^2.0.4",
+    "angular": "^1.5.8"
   }
 }
