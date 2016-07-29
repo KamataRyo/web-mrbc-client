@@ -18,10 +18,7 @@
 <body>
   <div id="main" class="container">
 
-    <header>
-      <h1 class="title">web mrbc</h1>
-      <p class="description">mruby Compiler on the Web</p>
-    </header>
+    <ng-include src="'partials/header.html'"></ng-include>
 
     <main>
       <form>
@@ -75,7 +72,7 @@
             <input ng-model="options" class="u-full-width" type="text" placeholder="i.e. '-g', if needed." id="options">
 
             <!-- Submit and Download -->
-            <input class="button download button-primary" type="submit" value="Download" ng-click="download()">
+            <input class="button button-primary download" type="submit" value="Download" ng-click="download()">
 
           </div><!--#inputArea-->
 
@@ -83,16 +80,7 @@
       </form>
     </main>
 
-    <footer class="footer">
-      <p class="footer-text">
-        <small>Web-mrbc is hosted by wakayama.rb.<br>We ♥ feedback.</small>
-      </p>
-      <ul class="sns-links">
-        <li class="sns-link"><a href="https://www.facebook.com/groups/wakayama.rb/"><i class="fa fa-2x fa-facebook-square"></i></a></li>
-        <li class="sns-link"><a href="https://github.com/wakayamarb"><i class="fa fa-2x fa-github"></i></a></li>
-        <!-- <li><a href="http://wakayamarb.org">Website</a></li> -->
-      </ul>
-    </footer>
+    <ng-include src="'partials/footer.html'"></ng-include>
 
   </div><!--.container-->
 

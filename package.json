@@ -9,11 +9,13 @@
     "sasslint": "./node_modules/.bin/sass-lint -c './.sass-lint.yml' 'assets/*.scss' -v -q",
     "htmlhint": "./node_modules/.bin/htmlhint index.html",
     "lint": "npm run coffeelint; npm run sasslint",
-    "test": "npm run build; karma start ./karma.conf.coffee --single-run --browsers PhantomJS"
+    "karma": "karma start ./karma.conf.coffee --single-run --browsers PhantomJS",
+    "test": "npm run build; npm run karma"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "angular-mocks": "^1.5.8",
     "bower": "^1.7.9",
     "coffee-script": "^1.10.0",
     "coffeelint": "^1.15.7",
@@ -27,6 +29,7 @@
     "karma-cli": "^1.0.1",
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.0.2",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.1",
     "phantomjs": "^2.1.7",
     "sass-lint": "^1.8.2"

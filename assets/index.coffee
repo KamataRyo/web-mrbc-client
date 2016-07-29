@@ -48,6 +48,12 @@ app.directive 'fileReader', ->
                 fileReader.readAsText file
             }
 
+app.directive 'snsLinks', ->
+    return {
+        restrict: 'E'
+        template: '<ul class="sns-links"><li>aaa</li></ul>'
+        replace: true
+    }
 
 
 app.controller 'tabCtrl', [

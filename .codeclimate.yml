@@ -3,8 +3,6 @@ engines:
     enabled: true
   fixme:
     enabled: true
-  scss-lint:
-    enabled: true
 ratings:
   paths:
   - "**.coffee"

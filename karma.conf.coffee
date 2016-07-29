@@ -15,6 +15,7 @@ module.exports = (config) ->
         # list of files / patterns to load in the browser
         files: [
             'vendor/angular/angular.js'
+            'node_modules/angular-mocks/angular-mocks.js'
             'assets/*.js'
             'spec/*.js'
         ]
