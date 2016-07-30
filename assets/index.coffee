@@ -1,12 +1,19 @@
 'use strict'
 
 endpoint = 'http://web-mrbc.wakayamarb.org'
-app = angular.module 'web-mrbc-client', []
+app = angular.module 'web-mrbc-client', [
+    'ngResource'
+]
 
 app.config [
     '$locationProvider'
-    ($locationProvider) ->
-        $locationProvider.html5Mode(true).hashPrefix '!'
+    '$routeProvider'
+    ($locationProvider, $routeProvider) ->
+        $locationProvider.html5Mode true
+        $routeProvider
+            .when '/', {
+                templateUrl: 'view/'
+            }
 ]
 
 app.directive 'fileReader', ->
@@ -33,12 +40,11 @@ app.directive 'fileReader', ->
                     event.target.files = null
                     scope.log = "Too large file. Size is limit upto #{limit}."
                     scope.fileName = ''
-                    scope.$apply()
                     return
 
                 scope.fileName = file.name
                 scope.compiledFileName = getCompiledFileName file.name
-                scope.$apply()
+                # scope.$apply()
 
                 fileReader = new FileReader()
                 # set me as source and enable upload(download)
@@ -48,13 +54,21 @@ app.directive 'fileReader', ->
                 fileReader.readAsText file
             }
 
-app.directive 'snsLinks', ->
-    return {
-        restrict: 'E'
-        template: '<ul class="sns-links"><li>aaa</li></ul>'
-        replace: true
-    }
-
+# app.directive 'snsLinks', ->
+#     return {
+#         restrict: 'EA'
+#         template: '<ul class="sns-links"></ul>'
+#         replace: true
+#         transclude: true
+#     }
+#
+# app.directive 'snsLink', ->
+#     return {
+#         restrict: 'EA'
+#         template: '<li class="sns-link"></li>'
+#         replace: true
+#         transclude: false
+#     }
 
 app.controller 'tabCtrl', [
     '$scope'
@@ -62,7 +76,7 @@ app.controller 'tabCtrl', [
     '$http'
     '$httpParamSerializer'
     ($scope, $location, $http, $httpParamSerializer) ->
-        # initialize tab states
+        #initialize tab states
         $scope.fileUploadActive  = 'active'
         $scope.directInputActive = 'inactive'
         $scope.fromURLActive     = 'inactive'
@@ -74,8 +88,8 @@ app.controller 'tabCtrl', [
             {version: 2, label: 'Ver.0002'}
         ]
         $scope.bytecodeFormatVersion = $scope.bytecodeFormats[0].version;
-
-        # select to toggle tabs
+        #
+        # # select to toggle tabs
         $scope.select = (selection) ->
             $scope.log = undefined
             $scope.fileUploadActive  = 'inactive'
@@ -87,8 +101,8 @@ app.controller 'tabCtrl', [
 
         # client side routing
         hash = $location.hash()
+        console.log $location
         if hash isnt '' then $scope.select hash
-
 
         # make request and download binary
         $scope.download = ->
