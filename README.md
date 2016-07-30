@@ -6,4 +6,4 @@
 This is a single page application to serve mrbc compile application with GUI.
 Work against [web-mrbc-api](https://github.com/KamataRyo/web-mrbc-api).
 
-Hosted on [gh-pages](https://kamataryo.github.io/web-mrbc-api).
+Hosted on [gh-pages](https://kamataryo.github.io/web-mrbc-client).
