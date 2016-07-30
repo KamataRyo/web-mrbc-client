@@ -6,7 +6,7 @@ app = angular.module 'web-mrbc-client', []
 app.config [
     '$locationProvider'
     ($locationProvider) ->
-        $locationProvider.html5Mode(true).hashPrefix '!'
+        $locationProvider.html5Mode(false)
 ]
 
 app.directive 'fileReader', ->
@@ -33,12 +33,11 @@ app.directive 'fileReader', ->
                     event.target.files = null
                     scope.log = "Too large file. Size is limit upto #{limit}."
                     scope.fileName = ''
-                    scope.$apply()
                     return
 
                 scope.fileName = file.name
                 scope.compiledFileName = getCompiledFileName file.name
-                scope.$apply()
+                # scope.$apply()
 
                 fileReader = new FileReader()
                 # set me as source and enable upload(download)
@@ -70,7 +69,7 @@ app.controller 'tabCtrl', [
     '$http'
     '$httpParamSerializer'
     ($scope, $location, $http, $httpParamSerializer) ->
-        # initialize tab states
+        #initialize tab states
         $scope.fileUploadActive  = 'active'
         $scope.directInputActive = 'inactive'
         $scope.fromURLActive     = 'inactive'
@@ -82,8 +81,8 @@ app.controller 'tabCtrl', [
             {version: 2, label: 'Ver.0002'}
         ]
         $scope.bytecodeFormatVersion = $scope.bytecodeFormats[0].version;
-
-        # select to toggle tabs
+        #
+        # # select to toggle tabs
         $scope.select = (selection) ->
             $scope.log = undefined
             $scope.fileUploadActive  = 'inactive'
@@ -95,8 +94,8 @@ app.controller 'tabCtrl', [
 
         # client side routing
         hash = $location.hash()
+        console.log $location
         if hash isnt '' then $scope.select hash
-
 
         # make request and download binary
         $scope.download = ->
