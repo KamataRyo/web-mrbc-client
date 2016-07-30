@@ -1,12 +1,19 @@
 'use strict'
 
 endpoint = 'http://web-mrbc.wakayamarb.org'
-app = angular.module 'web-mrbc-client', []
+app = angular.module 'web-mrbc-client', [
+    'ngResource'
+]
 
 app.config [
     '$locationProvider'
-    ($locationProvider) ->
-        $locationProvider.html5Mode(false)
+    '$routeProvider'
+    ($locationProvider, $routeProvider) ->
+        $locationProvider.html5Mode true
+        $routeProvider
+            .when '/', {
+                templateUrl: 'view/'
+            }
 ]
 
 app.directive 'fileReader', ->

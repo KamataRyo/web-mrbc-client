@@ -1,0 +1,10 @@
+<!--ByteCode Format-->
+<label for="bytecode">Bytecode Format</label>
+<select ng-model="bytecodeFormatVersion" ng-options="format.version as format.label for format in bytecodeFormats" class="u-full-width" id="bytecode"></select>
+
+<!--Compiler options-->
+<label for="options">compiler options</label>
+<input ng-model="options" class="u-full-width" type="text" placeholder="i.e. '-g', if needed." id="options">
+
+<!-- Submit and Download -->
+<input class="button button-primary download" type="submit" value="Download" ng-click="download()">
