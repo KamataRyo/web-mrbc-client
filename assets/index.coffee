@@ -48,13 +48,21 @@ app.directive 'fileReader', ->
                 fileReader.readAsText file
             }
 
-app.directive 'snsLinks', ->
-    return {
-        restrict: 'E'
-        template: '<ul class="sns-links"><li>aaa</li></ul>'
-        replace: true
-    }
-
+# app.directive 'snsLinks', ->
+#     return {
+#         restrict: 'EA'
+#         template: '<ul class="sns-links"></ul>'
+#         replace: true
+#         transclude: true
+#     }
+#
+# app.directive 'snsLink', ->
+#     return {
+#         restrict: 'EA'
+#         template: '<li class="sns-link"></li>'
+#         replace: true
+#         transclude: false
+#     }
 
 app.controller 'tabCtrl', [
     '$scope'
