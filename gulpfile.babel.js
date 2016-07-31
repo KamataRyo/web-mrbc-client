@@ -5,9 +5,8 @@ import babel      from 'gulp-babel'
 import concat     from 'gulp-concat'
 import plumber    from 'gulp-plumber'
 
-
 gulp.task('babel', () => {
-    return gulp.src('src/**/*.js')
+    gulp.src('src/main.js')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(babel())
