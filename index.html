@@ -54,7 +54,8 @@
                   <input file-reader type="file" class="file-upload input-file" id="file">
                 </label>
                 <span class="filename-label">{{fileName}}</span>
-                <span class="filename-label">{{compiledFileName}}</span>
+                <i ng-show="fileName" class="fa fa-angle-double-right"></i>
+                <span class="filename-label future">{{compiledFileName}}</span>
               </li>
 
               <li class="tab-content" ng-class="directInputActive" id="directInputPanel">

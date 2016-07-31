@@ -14,5 +14,5 @@ node_modules
 .sass-lint.yml
 .travis.yml
 bower.json
-gulpfile.js
+gulpfile.babel.js
 package.json

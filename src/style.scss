@@ -92,7 +92,11 @@ a {
 }
 
 .filename-label {
-    margin-left: .5em;
+    margin: auto .5em;
+
+    &.future {
+        opacity: .7;
+    }
 }
 
 .source-area {
