@@ -1,17 +1,18 @@
 # these files will be ignored when deploy at gh-pages
-assets/*.coffee
-assets/*.scss
+src
 node_modules
 
+.babelrc
 .bowerrc
 .codeclimate.yml
 .deployignore
 .editorconfig
+.eslintignore
+.eslintrc.*
 .gitignore
 .hmtlhintrc
 .sass-lint.yml
 .travis.yml
 bower.json
-coffeelint.json
-gulpfile.coffee
+gulpfile.js
 package.json

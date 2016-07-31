@@ -1,8 +1,9 @@
 .DS_Store
 node_modules
 vendor
-assets/*.js
+dist
 assets/*.css
-spec/*.js
+
+*.map
 
 npm-debug.log
