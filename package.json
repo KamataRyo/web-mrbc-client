@@ -9,13 +9,11 @@
     "sasslint": "./node_modules/.bin/sass-lint -c './.sass-lint.yml' 'src/*.scss' -v -q",
     "htmlhint": "./node_modules/.bin/htmlhint index.html",
     "lint": "npm run eslint; npm run sasslint; npm run htmlhint",
-    "karma": "karma start ./karma.conf.js --single-run --browsers PhantomJS",
-    "test": "npm run build; npm run karma"
+    "test": "npm run build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "angular-mocks": "^1.5.8",
     "babel": "^6.5.2",
     "babel-preset-es2015": "^6.9.0",
     "bower": "^1.7.9",
@@ -26,14 +24,6 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "htmlhint": "^0.9.13",
-    "jasmine": "^2.4.1",
-    "karma": "^1.1.2",
-    "karma-cli": "^1.0.1",
-    "karma-coverage": "^1.1.1",
-    "karma-jasmine": "^1.0.2",
-    "karma-ng-html2js-preprocessor": "^1.0.0",
-    "karma-phantomjs-launcher": "^1.0.1",
-    "phantomjs": "^2.1.7",
     "sass-lint": "^1.8.2"
   }
 }

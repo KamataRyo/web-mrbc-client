@@ -18,7 +18,9 @@ gulp.task('babel', () => {
 gulp.task('sass', () => {
     return gulp.src('src/**/*.scss')
         .pipe(plumber())
+        .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist'))
 })
 
