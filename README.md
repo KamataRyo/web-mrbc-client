@@ -7,3 +7,12 @@ This is a single page application to serve mrbc compile application with GUI.
 Work against [web-mrbc-api](https://github.com/KamataRyo/web-mrbc-api).
 
 Hosted on [gh-pages](https://kamataryo.github.io/web-mrbc-client).
+
+# Contribution
+
+```
+git clone https://github.com/KamataRyo/web-mrbc-client.git
+cd web-mrbc-client
+npm install
+npm run build
+```
