@@ -11,10 +11,11 @@ branches:
   - master
   - "/^v?[0-9](\\.[0-9])*/"
 before_script:
+- npm i -g bower
+- bower install
 - npm run build
 script:
 - npm run lint
-- npm test
 after_success:
 - curl https://raw.githubusercontent.com/KamataRyo/travis-sctipts-collection/master/deploy-gh-pages.sh | bash
 env:

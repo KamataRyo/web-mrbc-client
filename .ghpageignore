@@ -1,14 +1,14 @@
 # these files will be ignored when deploy at gh-pages
-src
-node_modules
+src/
+node_modules/
 
 .babelrc
 .bowerrc
 .codeclimate.yml
-.deployignore
 .editorconfig
 .eslintignore
 .eslintrc.*
+.ghpageignore
 .gitignore
 .hmtlhintrc
 .sass-lint.yml
