@@ -4,17 +4,18 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build": "bower install; ./node_modules/.bin/gulp build",
+    "build": "./node_modules/.bin/bower install; ./node_modules/.bin/gulp build",
     "eslint": "./node_modules/.bin/eslint -c './.eslintrc.json' ./",
     "sasslint": "./node_modules/.bin/sass-lint -c './.sass-lint.yml' 'src/*.scss' -v -q",
     "htmlhint": "./node_modules/.bin/htmlhint index.html",
     "lint": "npm run eslint; npm run sasslint; npm run htmlhint"
-   },
+  },
   "author": "KamataRyo",
-"license": "MIT",
+  "license": "MIT",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.11.6",
     "bower": "^1.7.9",
     "eslint": "^3.2.0",
     "gulp": "^3.9.1",
