@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build": "./node_modules/.bin/bower install; ./node_modules/.bin/gulp build",
+    "build": "./node_modules/.bin/bower install && ./node_modules/.bin/gulp build",
     "eslint": "./node_modules/.bin/eslint -c './.eslintrc.json' ./",
     "sasslint": "./node_modules/.bin/sass-lint -c './.sass-lint.yml' 'src/*.scss' -v -q",
     "htmlhint": "./node_modules/.bin/htmlhint index.html",
-    "lint": "npm run eslint; npm run sasslint; npm run htmlhint"
+    "lint": "npm run eslint && npm run sasslint && npm run htmlhint",
+    "watch": "gulp watch"
   },
   "author": "KamataRyo",
   "license": "MIT",
